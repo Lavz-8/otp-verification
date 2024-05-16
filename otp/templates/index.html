@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP Generation and Verification</title>
+        <style>
+            /* Your CSS styles here */
+            body {
+                font-family: Arial, sans-serif;
+                padding: 0;
+                background-image: url("otp/img/bg.png"); /* Set the background image path here */
+                background-size: cover; /* Cover the entire background */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                color: #333;
+            }
+    
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            h2 {
+                color: #216800;
+            }
+
+            h1, h2 {
+                animation-name: zoomIn;
+                animation-duration: 1s;
+                animation-timing-function: ease-in;
+            }
+
+            @keyframes zoomIn {
+                from {
+                   transform: scale(0.5);
+                   opacity: 0;
+                }
+                to {
+                   transform: scale(1);
+                   opacity: 1;
+                }
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+    
+            input[type="email"],
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+    
+            button {
+            padding: 10px 20px;
+            background-color: #34a300;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+    
+            button:hover {
+                background-color: #005101;
+            }
+    
+            /* Styles for the modal */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+    
+            .modal-content {
+                background: linear-gradient(to right, rgba(149, 253, 88, 0.671), rgba(90, 113, 150, 0.868));
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 60%;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .center-button {
+                text-align: center;
+            }
+    
+            /* Close button */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+    
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Get OTP Button -->
+        <div class="container">
+            <h1>Welcome to the page</h1> <!-- Added heading here -->
+            <div class="center-button"> <!-- Added a div to center the button -->
+                <button id="getOTP" type="button">Get OTP</button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="otpModal" class="modal">
+           <!-- Modal content -->
+           <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Generate OTP</h2>
+            <form action="/send_otp" method="post">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="center-button">
+                    <button type="submit">Generate OTP</button>
+                </div>
+            </form>
+        </hr>
+            <h2>Enter OTP</h2>
+            <form action="/verify_otp" method="post">
+               <label for="email_verify">Enter your email:</label>
+               <input type="email" id="email_verify" name="email_verify" required>
+               <label for="otp">Enter OTP:</label>
+               <input type="text" id="otp" name="otp" required>
+               <div class="center-button">
+                    <button type="submit">Verify OTP</button>
+               </div>
+            </form>
+        </div>
+    
+
+
+    <!-- Your JavaScript code here -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("otpModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("getOTP");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
