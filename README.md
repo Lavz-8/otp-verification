@@ -63,5 +63,7 @@ This project demonstrates how to implement OTP (One-Time Password) generation an
 
     Open your web browser and go to `http://127.0.0.1:5000/`.
 
-## Project Structure
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
