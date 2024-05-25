@@ -20,7 +20,7 @@ This project demonstrates how to implement OTP (One-Time Password) generation an
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/otp-flask-app.git
+    git clone https://github.com/Lavz-8/otp-flask-app.git
     cd otp-flask-app
     ```
 
@@ -66,4 +66,7 @@ This project demonstrates how to implement OTP (One-Time Password) generation an
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## Credits
+This otp verfication was created by **Lavanya Varadharajan**.
 
