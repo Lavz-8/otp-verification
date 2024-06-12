@@ -64,7 +64,7 @@ This project demonstrates how to implement OTP (One-Time Password) generation an
     Open your web browser and go to `http://127.0.0.1:5000/`.
 
 ## Output
-![otp_veri](https://github.com/Lavz-8/otp-verification/assets/145861363/17831d94-1dee-4ca0-bacf-056cfa199ba4)
+![otp_verification](https://github.com/Lavz-8/otp-verification/assets/145861363/951b553a-e582-44be-8ad0-8e30db7e0e24)
 
 ## Contributing
 
